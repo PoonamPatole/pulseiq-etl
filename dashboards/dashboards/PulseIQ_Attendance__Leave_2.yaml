@@ -1,0 +1,130 @@
+dashboard_title: "[ PulseIQ \u2014 Attendance & Leave ]"
+description: null
+css: ''
+slug: null
+certified_by: ''
+certification_details: ''
+published: false
+uuid: 03ffdf89-87d6-49c9-b9c0-8b1005ea6daf
+position:
+  CHART-6YDbk5vHdzzXUKrtOF7nF:
+    children: []
+    id: CHART-6YDbk5vHdzzXUKrtOF7nF
+    meta:
+      chartId: 8
+      height: 50
+      sliceName: Monthly Attendance Rate
+      uuid: d7aab999-7230-4d26-a30c-d35cfc87317f
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-WeMFliAkCo7A9q9LglN1O
+    type: CHART
+  CHART-7uLgXYSQt_-emxIqUfXMr:
+    children: []
+    id: CHART-7uLgXYSQt_-emxIqUfXMr
+    meta:
+      chartId: 10
+      height: 50
+      sliceName: Attendance Trend with Anomaly Context
+      uuid: cb27fa99-2c2e-4177-ae13-f5fdd1e1d16e
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-WeMFliAkCo7A9q9LglN1O
+    type: CHART
+  CHART-i7Gy75r6byemUxRPqB8c2:
+    children: []
+    id: CHART-i7Gy75r6byemUxRPqB8c2
+    meta:
+      chartId: 9
+      height: 50
+      sliceName: Late Arrivals
+      uuid: cb8cafff-230e-40f9-a7d1-bd77fd7ddb81
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-WeMFliAkCo7A9q9LglN1O
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - ROW-WeMFliAkCo7A9q9LglN1O
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: "[ PulseIQ \u2014 Attendance & Leave ]"
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-WeMFliAkCo7A9q9LglN1O:
+    children:
+    - CHART-6YDbk5vHdzzXUKrtOF7nF
+    - CHART-i7Gy75r6byemUxRPqB8c2
+    - CHART-7uLgXYSQt_-emxIqUfXMr
+    id: ROW-WeMFliAkCo7A9q9LglN1O
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+metadata:
+  color_scheme_domain: []
+  shared_label_colors:
+  - AVG(attendance_rate_pct)
+  map_label_colors:
+    SUM(late_arrivals): '#1FA8C9'
+    AVG(attendance_rate_pct): '#1FA8C9'
+  label_colors: {}
+  chart_configuration:
+    '8':
+      id: 8
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 9
+        - 10
+    '9':
+      id: 9
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 8
+        - 10
+    '10':
+      id: 10
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 8
+        - 9
+  global_chart_configuration:
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    chartsInScope:
+    - 8
+    - 9
+    - 10
+  native_filter_configuration: []
+  chart_customization_config: []
+  color_scheme: ''
+  refresh_frequency: 0
+  expanded_slices: {}
+  timed_refresh_immune_slices: []
+  cross_filters_enabled: true
+  default_filters: '{}'
+theme_uuid: null
+version: 1.0.0

@@ -1,0 +1,7 @@
+Check	Issue count	Details
+Missing required fields	0	Rows missing one or more required values
+Duplicate payroll item IDs	0	Repeated IDs after the first occurrence
+Duplicate employee/run combinations	4	Rows belonging to repeated employee/run pairs
+Negative monetary values	0	Rows with at least one negative amount
+Gross pay arithmetic differences	0	Rows where gross pay differs from its components
+Net pay arithmetic differences	0	Rows where net pay differs from gross pay minus deductions

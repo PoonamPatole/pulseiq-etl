@@ -1,0 +1,36 @@
+
+data_contracts
+--------------
+feed, column_name, data_type, nullable, rule_or_allowed_values, description
+
+dim_employee
+------------
+employee_key, employee_id, full_name, gender, date_of_birth, hire_date, exit_date, employment_status, employment_type, department_id, role_id, role_title, job_level, manager_id, work_location, work_mode, highest_education, valid_from, valid_to, is_current, change_reason
+
+fact_payroll
+------------
+payroll_item_id, run_id, employee_id, date_key, employee_key, period_end_date, department_id, role_id, payable_days, lop_days, overtime_hours_paid, variable_pay_type, monthly_fixed_gross, basic, hra, conveyance, medical, special_allowance, earned_fixed_pay, overtime_pay, variable_pay, gross_pay, pf_employee, esi_employee, professional_tax, tds, other_deductions, total_deductions, net_pay, pf_employer, esi_employer, employer_cost, headcount_flag
+
+fact_attendance_monthly
+-----------------------
+attendance_fact_id, employee_id, date_key, employee_key, department_id, scheduled_days, present_days, wfh_days, half_days_unpaid, paid_leave_days, unpaid_absence_days, late_arrivals, avg_hours_worked, overtime_hours, attendance_rate, period_end_date
+
+fact_leave
+----------
+leave_request_id, employee_id, employee_key, leave_type_code, start_date_key, end_date_key, start_date, end_date, days, status, applied_on, decided_on, approver_id, reason
+
+fact_ledger
+-----------
+line_id, entry_id, date_key, entry_date, posting_period, financial_year, account_code, debit, credit, signed_amount_debit_positive, cost_center_department_id, source_type, source_id
+
+fact_invoice
+------------
+invoice_id, invoice_number, client_id, invoice_date_key, invoice_date, due_date, service_line_account, subtotal, gst_rate_percent, gst_amount, total_amount, amount_paid, balance_due, status, last_payment_date, days_to_pay, days_past_due_at_cutoff, ageing_bucket_at_cutoff, carried_in_from_prior_period, ledger_entry_id
+
+fact_invoice_payment
+--------------------
+payment_id, invoice_id, payment_date_key, payment_date, amount, payment_mode, reference_no, received_by, ledger_entry_id
+
+fact_expense
+------------
+expense_id, expense_date, expense_date_key, category_account, vendor_id, bill_reference, description, department_id, amount_excl_gst, gst_rate_percent, gst_amount, total_amount, due_date, paid_date, status, payment_mode, submitted_by, approved_by, ledger_entry_id, payment_ledger_entry_id

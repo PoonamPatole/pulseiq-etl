@@ -1,0 +1,110 @@
+slice_name: Current Headcount
+description: null
+certified_by: null
+certification_details: null
+viz_type: big_number_total
+params:
+  datasource: 1__table
+  viz_type: big_number_total
+  slice_id: 5
+  matrixify_enable: false
+  matrixify_mode_columns: disabled
+  matrixify_dimension_selection_mode_columns: members
+  matrixify_dimension_columns:
+    dimension: ''
+    values: []
+  matrixify_topn_value_columns: 10
+  matrixify_all_sort_by_columns: a_to_z
+  matrixify_topn_order_columns: true
+  matrixify_show_column_headers: true
+  matrixify_fit_columns_dynamically: true
+  matrixify_mode_rows: disabled
+  matrixify_dimension_selection_mode_rows: members
+  matrixify_dimension_rows:
+    dimension: ''
+    values: []
+  matrixify_topn_value_rows: 10
+  matrixify_all_sort_by_rows: a_to_z
+  matrixify_topn_order_rows: true
+  matrixify_show_row_labels: true
+  matrixify_row_height: 300
+  matrixify_charts_per_row: 4
+  matrixify_cell_title_template: ''
+  metric: count
+  adhoc_filters:
+  - clause: WHERE
+    comparator:
+    - true
+    datasourceWarning: false
+    expressionType: SIMPLE
+    filterOptionName: filter_f2f7z9msv2p_r7oyteipubd
+    isExtra: false
+    isNew: false
+    operator: IN
+    operatorId: IN
+    sqlExpression: null
+    subject: is_current
+  - clause: WHERE
+    comparator:
+    - Active
+    datasourceWarning: false
+    expressionType: SIMPLE
+    filterOptionName: filter_b2cx5shudp8_7qlhp703gr6
+    isExtra: false
+    isNew: false
+    operator: IN
+    operatorId: IN
+    sqlExpression: null
+    subject: employment_status
+  - clause: WHERE
+    subject: date_of_birth
+    operator: TEMPORAL_RANGE
+    comparator: No filter
+    expressionType: SIMPLE
+  header_font_size: 0.4
+  subtitle: "\u201C441 active employees are currently recorded in the warehouse.\u201D"
+  subtitle_font_size: 0.15
+  show_metric_name: false
+  y_axis_format: SMART_NUMBER
+  time_format: smart_date
+  force_timestamp_formatting: false
+  conditional_formatting: []
+  extra_form_data: {}
+  dashboards:
+  - 1
+query_context: "{\"datasource\":{\"id\":1,\"type\":\"table\"},\"force\":false,\"queries\"\
+  :[{\"filters\":[{\"col\":\"is_current\",\"op\":\"IN\",\"val\":[true]},{\"col\":\"\
+  employment_status\",\"op\":\"IN\",\"val\":[\"Active\"]},{\"col\":\"date_of_birth\"\
+  ,\"op\":\"TEMPORAL_RANGE\",\"val\":\"No filter\"}],\"extras\":{\"having\":\"\",\"\
+  where\":\"\"},\"applied_time_extras\":{},\"columns\":[],\"metrics\":[\"count\"],\"\
+  annotation_layers\":[],\"series_limit\":0,\"group_others_when_limit_reached\":false,\"\
+  order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"\
+  form_data\":{\"datasource\":\"1__table\",\"viz_type\":\"big_number_total\",\"slice_id\"\
+  :5,\"matrixify_enable\":false,\"matrixify_mode_columns\":\"disabled\",\"matrixify_dimension_selection_mode_columns\"\
+  :\"members\",\"matrixify_dimension_columns\":{\"dimension\":\"\",\"values\":[]},\"\
+  matrixify_topn_value_columns\":10,\"matrixify_all_sort_by_columns\":\"a_to_z\",\"\
+  matrixify_topn_order_columns\":true,\"matrixify_show_column_headers\":true,\"matrixify_fit_columns_dynamically\"\
+  :true,\"matrixify_mode_rows\":\"disabled\",\"matrixify_dimension_selection_mode_rows\"\
+  :\"members\",\"matrixify_dimension_rows\":{\"dimension\":\"\",\"values\":[]},\"\
+  matrixify_topn_value_rows\":10,\"matrixify_all_sort_by_rows\":\"a_to_z\",\"matrixify_topn_order_rows\"\
+  :true,\"matrixify_show_row_labels\":true,\"matrixify_row_height\":300,\"matrixify_charts_per_row\"\
+  :4,\"matrixify_cell_title_template\":\"\",\"metric\":\"count\",\"adhoc_filters\"\
+  :[{\"clause\":\"WHERE\",\"comparator\":[true],\"datasourceWarning\":false,\"expressionType\"\
+  :\"SIMPLE\",\"filterOptionName\":\"filter_f2f7z9msv2p_r7oyteipubd\",\"isExtra\"\
+  :false,\"isNew\":false,\"operator\":\"IN\",\"operatorId\":\"IN\",\"sqlExpression\"\
+  :null,\"subject\":\"is_current\"},{\"clause\":\"WHERE\",\"comparator\":[\"Active\"\
+  ],\"datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"filterOptionName\"\
+  :\"filter_b2cx5shudp8_7qlhp703gr6\",\"isExtra\":false,\"isNew\":false,\"operator\"\
+  :\"IN\",\"operatorId\":\"IN\",\"sqlExpression\":null,\"subject\":\"employment_status\"\
+  },{\"clause\":\"WHERE\",\"subject\":\"date_of_birth\",\"operator\":\"TEMPORAL_RANGE\"\
+  ,\"comparator\":\"No filter\",\"expressionType\":\"SIMPLE\"}],\"header_font_size\"\
+  :0.4,\"subtitle\":\"\u201C441 active employees are currently recorded in the warehouse.\u201D\
+  \",\"subtitle_font_size\":0.15,\"show_metric_name\":false,\"y_axis_format\":\"SMART_NUMBER\"\
+  ,\"time_format\":\"smart_date\",\"force_timestamp_formatting\":false,\"conditional_formatting\"\
+  :[],\"extra_form_data\":{},\"dashboards\":[1],\"force\":false,\"result_format\"\
+  :\"json\",\"result_type\":\"full\"},\"result_format\":\"json\",\"result_type\":\"\
+  full\"}"
+cache_timeout: null
+uuid: 9cc4b827-15da-4666-9756-bf848cc3e081
+version: 1.0.0
+dataset_uuid: 354da27e-6515-4574-8d01-320aa995cd08

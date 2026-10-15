@@ -1,0 +1,46 @@
+
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  etl:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    depends_on:
+      db:
+        condition: service_healthy
+
+  superset:
+    build:
+      context: .
+      dockerfile: Dockerfile.superset
+    ports:
+      - "8088:8088"
+    environment:
+      SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY}
+    command: >
+      /bin/sh -c "superset db upgrade &&
+      superset fab create-admin --username admin --firstname Admin --lastname User --email admin@pulseiq.local --password admin &&
+      superset init &&
+      /usr/bin/run-server.sh"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres_data: {}

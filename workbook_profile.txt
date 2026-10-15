@@ -1,0 +1,132 @@
+
+SHEET: README
+Rows: 108
+Columns:
+
+SHEET: data_dictionary
+Rows: 371
+Columns: sheet, column, data_type, description, null_count, null_percent, distinct_values, example
+
+SHEET: metric_dictionary
+Rows: 28
+Columns: metric_id, metric_name, business_definition, formula, source_table, grain, time_period, owner_team, unit, good_direction, caveat, minimum_group_size
+
+SHEET: data_contracts
+Rows: 42
+Columns: feed, column_name, data_type, nullable, rule_or_allowed_values, description
+
+SHEET: dq_checks_catalog
+Rows: 14
+Columns: check_id, check_name, description, logic_sql_or_rule, severity, tolerance, frequency, owner, fix_guidance
+
+SHEET: dim_date
+Rows: 2557
+Columns: date, date_key, year, quarter, month_number, month_name, year_month, week_of_year, day_of_week, is_weekend, is_holiday, is_working_day, financial_year, fiscal_quarter, fiscal_month_number, is_month_end, month_start_date, month_end_date
+
+SHEET: dim_employee
+Rows: 1606
+Columns: employee_key, employee_id, full_name, gender, date_of_birth, hire_date, exit_date, employment_status, employment_type, department_id, role_id, role_title, job_level, manager_id, work_location, work_mode, highest_education, valid_from, valid_to, is_current, change_reason
+
+SHEET: dim_department
+Rows: 11
+Columns: department_id, department_name, cost_center, description, is_leadership
+
+SHEET: dim_role
+Rows: 58
+Columns: role_id, department_id, role_title, level, grade, band_min_annual, band_mid_annual, band_max_annual, overtime_eligible, band_reference_year
+
+SHEET: dim_location
+Rows: 9
+Columns: work_location, state, city_tier, tier_number
+
+SHEET: dim_leave_type
+Rows: 6
+Columns: leave_type_code, leave_type_name, pay_type, annual_quota_days, prorated_for_joiners, carry_forward_allowed, max_carry_forward_days, policy_note
+
+SHEET: dim_account
+Rows: 47
+Columns: account_code, account_name, account_type, normal_balance, parent_code, is_group, statement, is_active
+
+SHEET: dim_client
+Rows: 28
+Columns: client_id, client_name, industry, city, state_or_region, country, client_type, gst_registration, payment_terms_days, payment_behaviour, primary_service_line, contact_email, onboarded_on, is_active
+
+SHEET: dim_vendor
+Rows: 30
+Columns: vendor_id, vendor_name, primary_expense_account, payment_terms_days, city, gst_registration, is_active
+
+SHEET: dim_team
+Rows: 16
+Columns: team_id, team_name, department_id, team_lead_employee_id, active_members, planning_cadence, board_tool
+
+SHEET: dim_sprint
+Rows: 38
+Columns: sprint_id, sprint_name, start_date, end_date, working_days, financial_year
+
+SHEET: fact_payroll
+Rows: 7344
+Columns: payroll_item_id, run_id, employee_id, date_key, employee_key, period_end_date, department_id, role_id, payable_days, lop_days, overtime_hours_paid, variable_pay_type, monthly_fixed_gross, basic, hra, conveyance, medical, special_allowance, earned_fixed_pay, overtime_pay, variable_pay, gross_pay, pf_employee, esi_employee, professional_tax, tds, other_deductions, total_deductions, net_pay, pf_employer, esi_employer, employer_cost, headcount_flag
+
+SHEET: fact_attendance_monthly
+Rows: 7343
+Columns: attendance_fact_id, employee_id, date_key, employee_key, department_id, scheduled_days, present_days, wfh_days, half_days_unpaid, paid_leave_days, unpaid_absence_days, late_arrivals, avg_hours_worked, overtime_hours, attendance_rate, period_end_date
+
+SHEET: fact_leave
+Rows: 3441
+Columns: leave_request_id, employee_id, employee_key, leave_type_code, start_date_key, end_date_key, start_date, end_date, days, status, applied_on, decided_on, approver_id, reason
+
+SHEET: fact_headcount_monthly
+Rows: 891
+Columns: date_key, month_start_date, department_id, headcount_start, hires, exits, voluntary_exits, transfers_in, transfers_out, headcount_end, attrition_rate_monthly_pct
+
+SHEET: fact_ledger
+Rows: 6784
+Columns: line_id, entry_id, date_key, entry_date, posting_period, financial_year, account_code, debit, credit, signed_amount_debit_positive, cost_center_department_id, source_type, source_id
+
+SHEET: fact_invoice
+Rows: 743
+Columns: invoice_id, invoice_number, client_id, invoice_date_key, invoice_date, due_date, service_line_account, subtotal, gst_rate_percent, gst_amount, total_amount, amount_paid, balance_due, status, last_payment_date, days_to_pay, days_past_due_at_cutoff, ageing_bucket_at_cutoff, carried_in_from_prior_period, ledger_entry_id
+
+SHEET: fact_invoice_payment
+Rows: 709
+Columns: payment_id, invoice_id, payment_date_key, payment_date, amount, payment_mode, reference_no, received_by, ledger_entry_id
+
+SHEET: fact_expense
+Rows: 501
+Columns: expense_id, expense_date, expense_date_key, category_account, vendor_id, bill_reference, description, department_id, amount_excl_gst, gst_rate_percent, gst_amount, total_amount, due_date, paid_date, status, payment_mode, submitted_by, approved_by, ledger_entry_id, payment_ledger_entry_id
+
+SHEET: fact_task
+Rows: 28868
+Columns: task_id, team_id, sprint_id, assignee_employee_id, task_type, priority, story_points, created_date, started_date, due_date, completed_date, status, reopened_count, cycle_time_days, is_overdue_at_cutoff, completed_on_time
+
+SHEET: fact_anomaly
+Rows: 405
+Columns: result_id, source_dataset, record_id, employee_id, period, anomaly_score, flagged, reason_code, reason_text, money_at_risk, model_version, scored_at, period_key
+
+SHEET: fact_attrition_risk
+Rows: 430
+Columns: prediction_id, employee_id, as_of_date_key, department_id, as_of_date, risk_score_12m, risk_band, top_reason_1, top_reason_2, top_reason_3, model_version, model_note, employee_key
+
+SHEET: fact_forecast
+Rows: 72
+Columns: forecast_id, metric, department_id, forecast_month, forecast_value, lower_80, upper_80, method, trained_through, model_version, forecast_month_key
+
+SHEET: budget_payroll_dept_month
+Rows: 198
+Columns: department_id, month, budget_payroll_cost
+
+SHEET: kpi_targets
+Rows: 180
+Columns: month, department_id, attendance_rate_target, overtime_share_target_pct, attrition_monthly_target_pct, task_completion_target_pct
+
+SHEET: reconciliation_answer_key
+Rows: 18
+Columns: month, employees_paid, payroll_gross_pay, payroll_net_pay, payroll_employer_cost, ledger_salary_related_expense, ledger_revenue, ledger_total_expense, ledger_net_profit, bank_closing_balance, receivables_closing_balance, payroll_vs_ledger_difference
+
+SHEET: reference_summary_dept_month
+Rows: 198
+Columns: department_id, month, employer_cost, gross_pay, overtime_pay, employees_paid, overtime_hours, late_arrivals, attendance_rate, headcount_end, hires, exits, attrition_rate_monthly_pct, tasks, tasks_done, story_points_done, task_completion_rate_pct, cost_per_head, overtime_share_pct
+
+SHEET: dq_known_issues
+Rows: 11
+Columns: issue_id, table_name, issue_type, affected_record_ids, description, check_that_should_catch_it, effect_on_totals
